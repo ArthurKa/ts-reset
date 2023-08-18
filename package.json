@@ -5,7 +5,7 @@
   "scripts": {
     "ts:noWatch": "tsc --noEmit",
     "ts": "npm run ts:noWatch -- --watch",
-    "dev": "npm run start-checks && nodemon -w src -e ts -x \"tsc --emitDeclarationOnly --declarationMap && node helpers/insert-ts-ignores-to-dist.js\"",
+    "dev": "npm run start-checks && nodemon -w src -w helpers -e ts,js -x \"tsc --emitDeclarationOnly --declarationMap && node helpers/insert-ts-ignores-to-dist.js\"",
     "build": "npm run start-checks && rm -rf dist && tsc --emitDeclarationOnly && node helpers/insert-ts-ignores-to-dist.js",
     "start-checks": "node helpers/start-checks.js",
     "repo-fix": "node helpers/eslint.js --fix",

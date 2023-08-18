@@ -8,7 +8,6 @@ declare module 'jsonwebtoken' {
   ): string;
 
   function verify<T>(token: string, secretOrPublicKey: Secret, options?: VerifyOptions & { complete?: false }): (
-    & T
-    & { iat: number }
+    T & { iat: number }
   );
 }
