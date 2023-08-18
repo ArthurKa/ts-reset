@@ -28,7 +28,10 @@ module.exports = ((/** @type {import('lint-staged').Config} */ e) => e)(files =>
   )));
 
   if(files.some(e => e.match(/(\btsconfig.*\.json|\.tsx?)$/))) {
-    commands.push('npm run ts:noWatch');
+    commands.push(
+      'npm run ts:noWatch',
+      'npm t',
+    );
   }
 
   return commands;
