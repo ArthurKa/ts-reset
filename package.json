@@ -12,7 +12,7 @@
     "tsd:noWatch": "tsd --show-diff",
     "tsd": "nodemon -w tests -w src -w dist -e ts -x \"clear && npm run tsd:noWatch\"",
     "test": "npm run tsd:noWatch",
-    "prepublish": "echo PREPUBLISH PREPUBLISH PREPUBLISH && node prepublish-checks.js",
+    "prepublishOnly": "node helpers/prepublish-checks.js",
     "prepare": "node -e \"try { require('husky').install(); } catch(e) { if(e.code !== 'MODULE_NOT_FOUND') throw e; }\""
   },
   "devDependencies": {
