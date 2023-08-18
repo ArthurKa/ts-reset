@@ -1,0 +1,49 @@
+{
+  "name": "@arthurka/ts-reset",
+  "version": "1.0.0",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "ts:noWatch": "tsc --noEmit",
+    "ts": "npm run ts:noWatch -- --watch",
+    "dev": "npm run start-checks && nodemon -w src -e ts -x \"tsc --emitDeclarationOnly --declarationMap && node helpers/insert-ts-ignores-to-dist.js\"",
+    "build": "npm run start-checks && rm -rf dist && tsc --emitDeclarationOnly && node helpers/insert-ts-ignores-to-dist.js",
+    "start-checks": "node helpers/start-checks.js",
+    "repo-fix": "node helpers/eslint.js --fix",
+    "tsd:noWatch": "tsd --show-diff",
+    "tsd": "nodemon -w tests -w src -w dist -e ts -x \"clear && npm run tsd:noWatch\"",
+    "test": "npm run tsd:noWatch",
+    "prepublish": "echo PREPUBLISH PREPUBLISH PREPUBLISH && node prepublish-checks.js",
+    "prepare": "node -e \"try { require('husky').install(); } catch(e) { if(e.code !== 'MODULE_NOT_FOUND') throw e; }\""
+  },
+  "devDependencies": {
+    "@arthurka/eslint": "3.14.0",
+    "@total-typescript/ts-reset": "0.5.1",
+    "@tsconfig/node18-strictest": "1.0.0",
+    "@types/jsonwebtoken": "9.0.2",
+    "@types/lint-staged": "13.2.0",
+    "@types/node": "18.13.0",
+    "@types/node-fetch": "2.6.4",
+    "@types/nodemon": "1.19.2",
+    "@types/react": "18.2.20",
+    "husky": "8.0.3",
+    "json5": "2.2.3",
+    "jsonwebtoken": "9.0.1",
+    "lint-staged": "13.2.3",
+    "node-fetch": "2.6.12",
+    "nodemon": "3.0.1",
+    "react": "18.2.0",
+    "tsd": "0.28.1",
+    "typescript": "5.1.6",
+    "zod": "3.22.1"
+  },
+  "tsd": {
+    "directory": "tests",
+    "compilerOptions": {
+      "types": [
+        "@types/node",
+        "@total-typescript/ts-reset",
+        "."
+      ]
+    }
+  }
+}

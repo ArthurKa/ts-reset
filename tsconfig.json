@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "types": [
+      "@types/node",
+      "@total-typescript/ts-reset",
+    ],
+    "isolatedModules": true,
+    "declaration": true,
+    "moduleResolution": "node",
+    "rootDir": "src",
+    "outDir": "dist",
+  },
+  "include": [
+    "src",
+  ],
+}

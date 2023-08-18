@@ -1,0 +1,12 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "es2022",
+    "jsx": "react-jsx",
+    "types": [
+      "@types/node",
+      "@total-typescript/ts-reset",
+      "..",
+    ],
+  },
+}
