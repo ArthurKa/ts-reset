@@ -23,5 +23,10 @@ declare global {
 
     toLowerCase<This extends string>(this: This): Lowercase<This>;
     toUpperCase<This extends string>(this: This): Uppercase<This>;
+
+    split(this: '', separator: '', limit?: number): [];
+    split(this: '', separator: string, limit?: number): [] | [''];
+    split(this: `${number}`, separator: '.'): [`${number}`] | [`${number}`, `${number}`];
+    split(this: `${number}`, separator: string): [string, ...string[]];
   }
 }
