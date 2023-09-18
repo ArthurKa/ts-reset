@@ -3,6 +3,11 @@ export {};
 type Split<T extends string> = T extends `${infer U}${infer Rest}` ? [U, ...Split<Rest>] : [];
 
 declare global {
+  interface StringConstructor {
+    (): '';
+    <T extends number>(e: T): `${T}`;
+  }
+
   interface String {
     charAt<This extends string, Pos extends number>(this: This, pos: Pos): (
       string extends This
