@@ -2,6 +2,7 @@ import './Array';
 import './Fetch';
 import './JSON';
 import './JWT';
+import './Number';
 import './Object';
 import './Promise';
 import './React';

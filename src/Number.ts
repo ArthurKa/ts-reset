@@ -1,0 +1,3 @@
+interface NumberConstructor {
+  (): 0;
+}
