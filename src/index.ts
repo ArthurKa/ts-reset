@@ -1,5 +1,6 @@
 import './Array';
 import './Fetch';
+import './fs';
 import './JSON';
 import './JWT';
 import './Number';
