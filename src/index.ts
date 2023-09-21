@@ -1,4 +1,5 @@
 import './Array';
+import './Boolean';
 import './Fetch';
 import './fs';
 import './JSON';
