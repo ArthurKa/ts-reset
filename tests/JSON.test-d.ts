@@ -1,7 +1,6 @@
 import { expectType } from 'tsd';
 import JSON5 from 'json5';
 
-
 const res1 = JSON.parse('');
 //    ^?
 expectType<unknown>(res1);

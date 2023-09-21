@@ -7,6 +7,7 @@ declare module 'json5' {
     reviver?: (this: any, key: string, value: any) => any,
   ): T;
 
+  // WARN: `@ts-ignore` directive will be added here on compile
   function stringify<T>(value: T, replacer?: (this: any, key: string, value: any) => any, space?: string | number): (
     T extends undefined
       ? undefined

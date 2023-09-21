@@ -1,3 +1,7 @@
-interface NumberConstructor {
-  (): 0;
+export {};
+
+declare global {
+  interface NumberConstructor {
+    (): 0;
+  }
 }
