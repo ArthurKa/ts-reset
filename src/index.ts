@@ -1,4 +1,5 @@
 import './Array';
+import './BitInt';
 import './Boolean';
 import './Fetch';
 import './fs';
