@@ -55,6 +55,30 @@ const res76 = String(123 as number);
 //    ^?
 expectType<`${number}`>(res76);
 
+const res77 = String(true);
+//    ^?
+expectType<'true'>(res77);
+
+const res78 = String(true as boolean);
+//    ^?
+expectType<'true' | 'false'>(res78);
+
+const res79 = String('asd');
+//    ^?
+expectType<'asd'>(res79);
+
+const res80 = String(200n);
+//    ^?
+expectType<'200'>(res80);
+
+const res81 = String(null);
+//    ^?
+expectType<'null'>(res81);
+
+const res82 = String(undefined);
+//    ^?
+expectType<'undefined'>(res82);
+
 const res8 = '2.3'.split('');
 //    ^?
 expectType<[string, ...string[]]>(res8);
