@@ -68,3 +68,47 @@ expectType<true>(res7);
 const res8 = Boolean(true as boolean);
 //    ^?
 expectType<boolean>(res8);
+
+declare const e: '' | 0 | 10 | 'qwe';
+if(e) {
+  expectType<'qwe' | 10>(e);
+  //                     ^?
+} else {
+  expectType<'' | 0>(e);
+  //                 ^?
+}
+// eslint-disable-next-line no-extra-boolean-cast
+if(Boolean(e)) {
+  expectType<'qwe' | 10>(e);
+  //                     ^?
+} else {
+  expectType<'' | 0>(e);
+  //                 ^?
+}
+
+const res9 = Boolean(e) && e;
+const res10 = Boolean(e) || e;
+expectType<false | 'qwe' | 10>(res9);
+//                             ^?
+expectType<true | '' | 0>(res10);
+//                        ^?
+
+const res11 = (
+  // eslint-disable-next-line no-implicit-coercion
+  !!e && (() => {
+    expectType<'qwe' | 10>(e);
+    //                     ^?
+    return e;
+  })()
+);
+const res12 = (
+  Boolean(e) && (() => {
+    expectType<'qwe' | 10>(e);
+    //                     ^?
+    return e;
+  })()
+);
+expectType<false | 'qwe' | 10>(res11);
+//                             ^?
+expectType<false | 'qwe' | 10>(res12);
+//                             ^?
