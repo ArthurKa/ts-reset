@@ -1,6 +1,6 @@
 {
   "name": "@arthurka/ts-reset",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "types": "dist/index.d.ts",
   "scripts": {
     "ts:noWatch": "tsc --noEmit",
