@@ -14,7 +14,7 @@
     "tsd": "nodemon -w tests -w src -w dist -e ts -x \"clear && npm run tsd:noWatch\"",
     "test": "npm run tsd:noWatch",
     "test:watch": "nodemon --delay 1 -w dist -w tests -w helpers -e ts -x \"npm t\"",
-    "prepublishOnly": "node helpers/prepublish-checks.js",
+    "prepublishOnly": "npm run build && node helpers/prepublish-checks.js && npm t",
     "prepare": "node -e \"try { require('husky').install(); } catch(e) { if(e.code !== 'MODULE_NOT_FOUND') throw e; }\""
   },
   "devDependencies": {
