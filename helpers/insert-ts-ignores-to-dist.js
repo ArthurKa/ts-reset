@@ -20,6 +20,9 @@ const ignoreDirectives = {
   'Zod.d.ts': [
     [2, 1],
   ],
+  'Array.d.ts': [
+    [3, 2],
+  ],
 };
 
 for(const [fileName, positions] of Object.entries(ignoreDirectives)) {
