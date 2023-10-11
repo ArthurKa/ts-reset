@@ -1,5 +1,3 @@
-export {};
-
 type Contain<T extends PropertyKey> = (
   T extends unknown
     ? { [K in T]: unknown }

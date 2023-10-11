@@ -1,5 +1,3 @@
-export {};
-
 declare global {
   interface BigIntConstructor {
     <T extends bigint | boolean | number | string>(value: T): (
