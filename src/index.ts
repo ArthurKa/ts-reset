@@ -9,5 +9,6 @@ import './Number';
 import './Object';
 import './Promise';
 import './React';
+import './Set';
 import './String';
 import './Zod';
