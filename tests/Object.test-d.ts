@@ -25,3 +25,15 @@ if(obj.hasOwnProperty(union)) {
 if(Object.hasOwn(obj, union)) {
   expectType<{ asd: unknown } | { qwe: unknown }>(obj);
 }
+
+const asd1 = Object.create(null);
+expectType<Record<string, unknown>>(asd1);
+//                                  ^?
+
+const asd2 = Object.create<number>(null);
+expectType<Record<string, number>>(asd2);
+//                                 ^?
+
+const asd3 = Object.create<number, string>(null);
+expectType<Record<number, string>>(asd3);
+//                                 ^?

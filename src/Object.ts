@@ -7,6 +7,9 @@ type Contain<T extends PropertyKey> = (
 declare global {
   interface ObjectConstructor {
     hasOwn<T extends PropertyKey>(e: object, key: T): e is Contain<T>;
+
+    create<T>(o: null): Record<string, T>;
+    create<T extends PropertyKey, K>(o: null): Record<T, K>;
   }
 
   interface Object {
