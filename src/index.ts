@@ -5,6 +5,7 @@ import './Fetch';
 import './fs';
 import './JSON';
 import './JWT';
+import './Map';
 import './Number';
 import './Object';
 import './Promise';
