@@ -12,4 +12,5 @@ import './Promise';
 import './React';
 import './Set';
 import './String';
+import './WeakMap';
 import './Zod';
