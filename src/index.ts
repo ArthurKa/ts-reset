@@ -6,6 +6,7 @@ import './fs';
 import './JSON';
 import './JWT';
 import './Map';
+import './Math';
 import './Number';
 import './Object';
 import './Promise';
