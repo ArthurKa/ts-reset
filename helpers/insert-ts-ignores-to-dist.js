@@ -14,7 +14,7 @@ const {
 /** @type {Record<string, Array<[number, number]>>} */
 const ignoreDirectives = {
   'JSON.d.ts': [
-    [3, 1],
+    [5, 1],
     [2, 1],
   ],
   'Zod.d.ts': [

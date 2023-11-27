@@ -1,5 +1,6 @@
-import { expectType } from 'tsd';
+import { expectNotType, expectType } from 'tsd';
 import JSON5 from 'json5';
+import { unknown } from 'zod';
 
 const res1 = JSON.parse('');
 //    ^?
@@ -40,3 +41,17 @@ expectType<string | undefined>(res9);
 const res10 = JSON5.stringify(undefined as undefined | number);
 //    ^?
 expectType<string | undefined>(res10);
+
+JSON.stringify({}, function(key, val) {
+  const e = this[key];
+  expectType<unknown>(e);
+  expectNotType<string>(key);
+  expectType<unknown>(val);
+});
+
+JSON.parse('{}', function(key, val) {
+  const e = this[key];
+  expectType<unknown>(e);
+  expectNotType<string>(key);
+  expectType<unknown>(val);
+});
