@@ -1,5 +1,5 @@
 declare global {
   interface MapConstructor {
-    new(): Map<unknown, unknown>;
+    new <T extends readonly (readonly [unknown, unknown])[]>(entries?: T | null): Map<T[number][0], T[number][1]>;
   }
 }

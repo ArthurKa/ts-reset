@@ -1,5 +1,5 @@
 declare global {
   interface WeakMapConstructor {
-    new <K extends object = object, V = unknown>(entries?: readonly (readonly [K, V])[] | null): WeakMap<K, V>;
+    new <T extends readonly (readonly [object, unknown])[]>(entries?: T | null): WeakMap<T[number][0], T[number][1]>;
   }
 }
