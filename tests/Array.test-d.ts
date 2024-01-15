@@ -74,3 +74,19 @@ if(Array.isArray(arr6)) {
   expectType<string>(arr6);
   //                 ^?
 }
+
+declare const readonlyTuple1: readonly [123, 'asd'];
+const readonlyMappedTuple1 = readonlyTuple1.map(String);
+expectType<readonly [string, string]>(readonlyMappedTuple1);
+//                                    ^?
+const readonlyMappedTuple2 = readonlyTuple1.map(e => String(e));
+expectType<readonly ['asd' | '123', 'asd' | '123']>(readonlyMappedTuple2);
+//                                                  ^?
+
+declare const tuple1: [123, 'asd'];
+const mappedTuple1 = tuple1.map(String);
+expectType<[string, string]>(mappedTuple1);
+//                           ^?
+const mappedTuple2 = tuple1.map(e => String(e));
+expectType<['asd' | '123', 'asd' | '123']>(mappedTuple2);
+//                                         ^?
