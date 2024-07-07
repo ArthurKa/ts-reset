@@ -21,3 +21,5 @@ const Comp2: React.FCWithChildren<{ a: 2 }> = props => {
 const Comp3: React.FCWithDisplayName<'Comp3'> = () => null;
 Comp3.displayName = 'Comp3';
 expectType<'Comp3'>(Comp3.displayName);
+
+const Comp4: React.FCWithChildren = ({ children }) => children;
