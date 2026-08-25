@@ -21,14 +21,14 @@ const res5 = Number(false as boolean);
 //    ^?
 expectType<0 | 1>(res5);
 
-const numbers = tuple(
+const numbers = tuple([
   //  ^?
   Number(undefined),
   Number(Infinity),
   Number(-Infinity),
   Number(NaN),
   Number('123' as string),
-);
+]);
 expectType<[number, number, number, number, number]>(numbers);
 
 const res6 = Number(200n);

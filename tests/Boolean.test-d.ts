@@ -14,16 +14,16 @@ const falsy = [
 ];
 expectType<false[]>(falsy);
 
-const widenFalsy = tuple(
+const widenFalsy = tuple([
   //  ^?
   Boolean(false as boolean),
   Boolean(0 as number),
   Boolean(0n as bigint),
   Boolean('' as string),
-);
+]);
 expectType<[boolean, boolean, boolean, boolean]>(widenFalsy);
 
-const truthy = tuple(
+const truthy = tuple([
   //    ^?
   Boolean([1, 2]),
   Boolean(['1', 2] as const),
@@ -32,7 +32,7 @@ const truthy = tuple(
   Boolean({ a: 2 }),
   Boolean({ asd: 'qwe' } as const),
   Boolean('asd'),
-);
+]);
 expectType<[boolean, boolean, boolean, boolean, boolean, boolean, boolean]>(truthy);
 
 const res1 = Boolean(123);

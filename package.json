@@ -1,13 +1,12 @@
 {
   "name": "@arthurka/ts-reset",
   "version": "1.13.0",
-  "types": "dist/index.d.ts",
   "scripts": {
     "ts:noWatch": "tsc --noEmit",
     "ts": "npm run ts:noWatch -- --watch",
     "dev": "npm run start-checks && nodemon -w src -w helpers -e ts,js -x \"tsc --emitDeclarationOnly --declarationMap && node helpers/insert-ts-ignores-to-dist.js\"",
     "dev+test": "concurrently -r \"npm run dev\" \"npm run test:watch\"",
-    "my-compile": "node ../compile.js",
+    "my-compile": "node ../my-compile.cjs",
     "build": "npm run start-checks && rm -rf dist && tsc --emitDeclarationOnly && node helpers/insert-ts-ignores-to-dist.js && npm run my-compile",
     "start-checks": "node helpers/start-checks.js",
     "repo-fix": "node helpers/eslint.js --fix",
@@ -19,7 +18,7 @@
     "prepare": "node -e \"try { require('husky').install(); } catch(e) { if(e.code !== 'MODULE_NOT_FOUND') throw e; }\""
   },
   "dependencies": {
-    "@arthurka/ts-utils": "3.10.0"
+    "@arthurka/ts-utils": "3.19.0"
   },
   "devDependencies": {
     "@arthurka/eslint": "3.14.0",
@@ -42,6 +41,7 @@
     "typescript": "5.1.6",
     "zod": "3.22.1"
   },
+  "types": "dist/index.d.ts",
   "tsd": {
     "directory": "tests",
     "compilerOptions": {
