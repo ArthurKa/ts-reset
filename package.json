@@ -1,6 +1,6 @@
 {
   "name": "@arthurka/ts-reset",
-  "version": "1.13.0",
+  "version": "1.13.1",
   "scripts": {
     "ts:noWatch": "tsc --noEmit",
     "ts": "npm run ts:noWatch -- --watch",
